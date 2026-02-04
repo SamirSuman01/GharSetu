@@ -1,0 +1,74 @@
+<svg width="2071" height="1380" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="prop1Sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a2d30;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1d20;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="prop1Building" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#C9A959;stop-opacity:0.6" />
+    </linearGradient>
+    <pattern id="jaali1" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="3" fill="#C9A959" opacity="0.7"/>
+    </pattern>
+  </defs>
+
+  <!-- Sky Background -->
+  <rect width="2071" height="1380" fill="url(#prop1Sky)"/>
+
+  <!-- Ambient glow -->
+  <circle cx="1035" cy="400" r="300" fill="#C9A959" opacity="0.15"/>
+
+  <!-- Lutyens Bungalow Architecture -->
+  <!-- Main Structure -->
+  <g opacity="0.9">
+    <!-- Central Building -->
+    <rect x="700" y="500" width="671" height="500" fill="url(#prop1Building)" stroke="#C9A959" stroke-width="2"/>
+
+    <!-- Colonial Columns -->
+    <rect x="750" y="600" width="40" height="400" fill="none" stroke="#C9A959" stroke-width="2" opacity="0.6"/>
+    <rect x="890" y="600" width="40" height="400" fill="none" stroke="#C9A959" stroke-width="2" opacity="0.6"/>
+    <rect x="1030" y="600" width="40" height="400" fill="none" stroke="#C9A959" stroke-width="2" opacity="0.6"/>
+    <rect x="1170" y="600" width="40" height="400" fill="none" stroke="#C9A959" stroke-width="2" opacity="0.6"/>
+    <rect x="1281" y="600" width="40" height="400" fill="none" stroke="#C9A959" stroke-width="2" opacity="0.6"/>
+
+    <!-- Dome/Cupola -->
+    <ellipse cx="1035" cy="500" rx="150" ry="80" fill="none" stroke="#C9A959" stroke-width="2" opacity="0.5"/>
+    <path d="M 885 500 Q 1035 420 1185 500" fill="none" stroke="#C9A959" stroke-width="2" opacity="0.7"/>
+
+    <!-- Entrance Arch (Mughal influence) -->
+    <path d="M 950 1000 L 950 750 Q 950 700 1000 700 L 1070 700 Q 1120 700 1120 750 L 1120 1000 Z"
+          fill="none" stroke="#C9A959" stroke-width="3" opacity="0.8"/>
+    <path d="M 960 750 Q 1035 680 1110 750" fill="none" stroke="#C9A959" stroke-width="2" opacity="0.6"/>
+
+    <!-- Windows with Jaali pattern -->
+    <rect x="780" y="650" width="90" height="130" fill="url(#jaali1)" stroke="#C9A959" stroke-width="1.5" opacity="0.5"/>
+    <rect x="920" y="650" width="90" height="130" fill="url(#jaali1)" stroke="#C9A959" stroke-width="1.5" opacity="0.5"/>
+    <rect x="1060" y="650" width="90" height="130" fill="url(#jaali1)" stroke="#C9A959" stroke-width="1.5" opacity="0.5"/>
+    <rect x="1200" y="650" width="90" height="130" fill="url(#jaali1)" stroke="#C9A959" stroke-width="1.5" opacity="0.5"/>
+
+    <!-- Balconies (Jharokhas) -->
+    <rect x="870" y="820" width="100" height="80" fill="none" stroke="#C9A959" stroke-width="2" opacity="0.4"/>
+    <rect x="1100" y="820" width="100" height="80" fill="none" stroke="#C9A959" stroke-width="2" opacity="0.4"/>
+
+    <!-- Decorative cornice -->
+    <line x1="700" y1="600" x2="1371" y2="600" stroke="#C9A959" stroke-width="3" opacity="0.6"/>
+    <line x1="700" y1="595" x2="1371" y2="595" stroke="#C9A959" stroke-width="1" opacity="0.3"/>
+
+    <!-- Garden Elements -->
+    <circle cx="500" cy="1100" r="80" fill="none" stroke="#4A7C59" stroke-width="2" opacity="0.3"/>
+    <circle cx="500" cy="1100" r="50" fill="none" stroke="#4A7C59" stroke-width="1" opacity="0.2"/>
+    <circle cx="1570" cy="1100" r="80" fill="none" stroke="#4A7C59" stroke-width="2" opacity="0.3"/>
+    <circle cx="1570" cy="1100" r="50" fill="none" stroke="#4A7C59" stroke-width="1" opacity="0.2"/>
+
+    <!-- Pathway -->
+    <rect x="980" y="1000" width="110" height="380" fill="none" stroke="#C9A959" stroke-width="1" opacity="0.2"/>
+    <line x1="1000" y1="1050" x2="1070" y2="1050" stroke="#C9A959" stroke-width="1" opacity="0.15"/>
+    <line x1="1000" y1="1150" x2="1070" y2="1150" stroke="#C9A959" stroke-width="1" opacity="0.15"/>
+    <line x1="1000" y1="1250" x2="1070" y2="1250" stroke="#C9A959" stroke-width="1" opacity="0.15"/>
+  </g>
+
+  <!-- Subtle text label -->
+  <text x="1035" y="1320" text-anchor="middle" fill="#C9A959" opacity="0.2" font-family="serif" font-size="28" font-weight="300" letter-spacing="4">LUTYENS BUNGALOW</text>
+  <text x="1035" y="1355" text-anchor="middle" fill="#C9A959" opacity="0.15" font-family="serif" font-size="18" font-weight="300" letter-spacing="8">CENTRAL DELHI</text>
+</svg>

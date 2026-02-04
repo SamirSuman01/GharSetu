@@ -1,0 +1,316 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   LUXURY REAL ESTATE - GLOBAL STYLES
+   ============================================ */
+
+:root {
+  /* Core luxury colors */
+  --color-gold: #C9A962;
+  --color-gold-light: #E5D4A1;
+  --color-gold-dark: #9A7B3D;
+  --color-cream: #FAF8F5;
+  --color-charcoal: #1A1A1A;
+  --color-charcoal-light: #2D2D2D;
+  --color-slate: #4A4A4A;
+  --color-off-white: #F5F5F3;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-blur: 20px;
+
+  /* Transitions */
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Smooth scrolling body */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+html {
+  scroll-behavior: initial;
+}
+
+body {
+  background-color: var(--color-charcoal);
+  color: var(--color-off-white);
+  font-feature-settings: "rlig" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-charcoal);
+}
+
+/* ============================================
+   GLASSMORPHISM UTILITIES
+   ============================================ */
+
+@layer utilities {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+  }
+
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-gold {
+    background: rgba(201, 169, 98, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(201, 169, 98, 0.2);
+  }
+}
+
+/* ============================================
+   TEXT GRADIENT UTILITIES
+   ============================================ */
+
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 50%, var(--color-gold-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-cream {
+    background: linear-gradient(180deg, var(--color-off-white) 0%, rgba(245, 245, 243, 0.7) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* ============================================
+   ANIMATION UTILITIES
+   ============================================ */
+
+@layer utilities {
+  /* Reveal animations */
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s var(--ease-luxury), transform 1s var(--ease-luxury);
+  }
+
+  .reveal-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Stagger children delay */
+  .stagger-children > * {
+    --stagger-delay: 0.1s;
+  }
+
+  .stagger-children > *:nth-child(1) { transition-delay: calc(var(--stagger-delay) * 1); }
+  .stagger-children > *:nth-child(2) { transition-delay: calc(var(--stagger-delay) * 2); }
+  .stagger-children > *:nth-child(3) { transition-delay: calc(var(--stagger-delay) * 3); }
+  .stagger-children > *:nth-child(4) { transition-delay: calc(var(--stagger-delay) * 4); }
+  .stagger-children > *:nth-child(5) { transition-delay: calc(var(--stagger-delay) * 5); }
+  .stagger-children > *:nth-child(6) { transition-delay: calc(var(--stagger-delay) * 6); }
+
+  /* Magnetic button hover */
+  .magnetic {
+    transition: transform 0.3s var(--ease-luxury);
+  }
+
+  /* Scroll indicator bounce */
+  .scroll-indicator {
+    animation: scrollBounce 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+  }
+
+  /* Line reveal */
+  .line-reveal {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .line-reveal::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--color-gold);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.6s var(--ease-luxury);
+  }
+
+  .line-reveal:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-charcoal);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-slate);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+/* ============================================
+   SWIPER CUSTOMIZATION
+   ============================================ */
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.4s var(--ease-luxury);
+}
+
+.swiper-pagination-bullet-active {
+  width: 32px;
+  background: var(--color-gold);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 56px;
+  height: 56px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  transition: all 0.4s var(--ease-luxury);
+}
+
+/* Position arrows outside the swiper container */
+.gallery-swiper .swiper-button-prev {
+  left: -80px;
+}
+
+.gallery-swiper .swiper-button-next {
+  right: -80px;
+}
+
+/* Hide arrows on mobile/tablet */
+@media (max-width: 1280px) {
+  .gallery-swiper .swiper-button-prev,
+  .gallery-swiper .swiper-button-next {
+    display: none;
+  }
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 16px;
+  color: white;
+}
+
+/* ============================================
+   LOADING STATES
+   ============================================ */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-charcoal-light) 0%,
+    var(--color-slate) 50%,
+    var(--color-charcoal-light) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ============================================
+   RESPONSIVE CONTAINER
+   ============================================ */
+
+.container-luxury {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-left: clamp(20px, 5vw, 80px);
+  padding-right: clamp(20px, 5vw, 80px);
+}
+
+/* ============================================
+   IMAGE OPTIMIZATION
+   ============================================ */
+
+.image-luxury {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-luxury img {
+  transition: transform 1.2s var(--ease-luxury);
+}
+
+.image-luxury:hover img {
+  transform: scale(1.05);
+}
+
+/* ============================================
+   REDUCED MOTION PREFERENCES
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

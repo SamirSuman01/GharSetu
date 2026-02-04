@@ -1,0 +1,13 @@
+<svg width="2070" height="1380" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gal4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#20251a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a2a1a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="2070" height="1380" fill="url(#gal4)"/>
+  <g opacity="0.5">
+    <path d="M 600 800 L 1035 400 L 1470 800 Z" fill="none" stroke="#C9A959" stroke-width="2"/>
+    <circle cx="300" cy="500" r="100" fill="none" stroke="#C9A959" stroke-width="1" opacity="0.5"/>
+  </g>
+</svg>

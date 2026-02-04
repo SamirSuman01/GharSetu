@@ -1,0 +1,76 @@
+<svg width="2053" height="1370" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="prop2Sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2530;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a232e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="prop2Sea" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a52;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#0f1d2a;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="prop2Building" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#C9A959;stop-opacity:0.55" />
+      <stop offset="100%" style="stop-color:#8B7355;stop-opacity:0.5" />
+    </linearGradient>
+    <pattern id="glass" x="0" y="0" width="40" height="60" patternUnits="userSpaceOnUse">
+      <rect x="5" y="5" width="30" height="50" fill="#87CEEB" opacity="0.3" stroke="#C9A959" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="2053" height="1370" fill="url(#prop2Sky)"/>
+
+  <!-- Ocean/Sea -->
+  <rect y="900" width="2053" height="470" fill="url(#prop2Sea)"/>
+  <path d="M 0 950 Q 500 930 1000 950 T 2053 950" stroke="#C9A959" stroke-width="1" opacity="0.3" fill="none"/>
+  <path d="M 0 1000 Q 600 980 1200 1000 T 2053 1000" stroke="#C9A959" stroke-width="1" opacity="0.25" fill="none"/>
+
+  <!-- Moon reflection -->
+  <ellipse cx="1700" cy="300" rx="100" ry="100" fill="#C9A959" opacity="0.2"/>
+  <ellipse cx="1700" cy="1100" rx="40" ry="200" fill="#C9A959" opacity="0.1"/>
+
+  <!-- Modern High-rise Tower -->
+  <g opacity="0.9">
+    <!-- Main Tower -->
+    <rect x="750" y="250" width="553" height="650" fill="url(#prop2Building)" stroke="#C9A959" stroke-width="2.5"/>
+
+    <!-- Glass Facade Pattern -->
+    <rect x="770" y="280" width="513" height="610" fill="url(#glass)"/>
+
+    <!-- Balconies -->
+    <line x1="750" y1="400" x2="1303" y2="400" stroke="#C9A959" stroke-width="2" opacity="0.4"/>
+    <line x1="750" y1="520" x2="1303" y2="520" stroke="#C9A959" stroke-width="2" opacity="0.4"/>
+    <line x1="750" y1="640" x2="1303" y2="640" stroke="#C9A959" stroke-width="2" opacity="0.4"/>
+    <line x1="750" y1="760" x2="1303" y2="760" stroke="#C9A959" stroke-width="2" opacity="0.4"/>
+
+    <!-- Vertical columns -->
+    <line x1="900" y1="250" x2="900" y2="900" stroke="#C9A959" stroke-width="1.5" opacity="0.3"/>
+    <line x1="1026" y1="250" x2="1026" y2="900" stroke="#C9A959" stroke-width="1.5" opacity="0.3"/>
+    <line x1="1153" y1="250" x2="1153" y2="900" stroke="#C9A959" stroke-width="1.5" opacity="0.3"/>
+
+    <!-- Penthouse Level -->
+    <rect x="800" y="200" width="453" height="50" fill="#C9A959" opacity="0.15" stroke="#C9A959" stroke-width="2"/>
+    <path d="M 800 200 L 1026 150 L 1253 200 Z" fill="none" stroke="#C9A959" stroke-width="2" opacity="0.5"/>
+
+    <!-- Ground level/Lobby -->
+    <rect x="750" y="900" width="553" height="100" fill="#C9A959" opacity="0.1" stroke="#C9A959" stroke-width="2"/>
+    <rect x="950" y="900" width="153" height="100" fill="none" stroke="#C9A959" stroke-width="3" opacity="0.6"/>
+
+    <!-- Decorative elements -->
+    <circle cx="850" cy="950" r="15" fill="none" stroke="#C9A959" stroke-width="1" opacity="0.4"/>
+    <circle cx="1203" cy="950" r="15" fill="none" stroke="#C9A959" stroke-width="1" opacity="0.4"/>
+
+    <!-- Palm trees -->
+    <line x1="600" y1="1000" x2="600" y2="850" stroke="#4A7C59" stroke-width="8" opacity="0.3"/>
+    <path d="M 600 850 Q 550 820 520 850" stroke="#4A7C59" stroke-width="6" opacity="0.25" fill="none"/>
+    <path d="M 600 850 Q 650 820 680 850" stroke="#4A7C59" stroke-width="6" opacity="0.25" fill="none"/>
+
+    <line x1="1450" y1="1000" x2="1450" y2="830" stroke="#4A7C59" stroke-width="10" opacity="0.3"/>
+    <path d="M 1450 830 Q 1390 790 1350 830" stroke="#4A7C59" stroke-width="7" opacity="0.25" fill="none"/>
+    <path d="M 1450 830 Q 1510 790 1550 830" stroke="#4A7C59" stroke-width="7" opacity="0.25" fill="none"/>
+  </g>
+
+  <!-- Labels -->
+  <text x="1026" y="1310" text-anchor="middle" fill="#C9A959" opacity="0.2" font-family="serif" font-size="28" font-weight="300" letter-spacing="4">SEA-FACING RESIDENCE</text>
+  <text x="1026" y="1345" text-anchor="middle" fill="#C9A959" opacity="0.15" font-family="serif" font-size="18" font-weight="300" letter-spacing="8">MUMBAI</text>
+</svg>

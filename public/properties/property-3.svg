@@ -1,0 +1,97 @@
+<svg width="2070" height="1380" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="prop3Sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1d2814;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a2520;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="prop3Building" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#C9A959;stop-opacity:0.55" />
+      <stop offset="100%" style="stop-color:#8B7355;stop-opacity:0.6" />
+    </linearGradient>
+    <radialGradient id="foliage">
+      <stop offset="0%" style="stop-color:#4A7C59;stop-opacity:0.65" />
+      <stop offset="100%" style="stop-color:#2d4a35;stop-opacity:0.45" />
+    </radialGradient>
+  </defs>
+
+  <!-- Sky Background -->
+  <rect width="2070" height="1380" fill="url(#prop3Sky)"/>
+
+  <!-- Garden atmosphere circles -->
+  <circle cx="400" cy="400" r="200" fill="#4A7C59" opacity="0.12"/>
+  <circle cx="1670" cy="500" r="250" fill="#4A7C59" opacity="0.12"/>
+  <circle cx="1035" cy="1000" r="300" fill="#C9A959" opacity="0.1"/>
+
+  <!-- Garden Estate Architecture -->
+  <g opacity="0.9">
+    <!-- Main Estate Building -->
+    <rect x="600" y="400" width="870" height="500" fill="url(#prop3Building)" stroke="#C9A959" stroke-width="2.5"/>
+
+    <!-- Colonial style roof -->
+    <path d="M 565 400 L 1035 250 L 1505 400 Z" fill="none" stroke="#C9A959" stroke-width="2.5" opacity="0.6"/>
+    <line x1="565" y1="400" x2="1505" y2="400" stroke="#C9A959" stroke-width="3" opacity="0.5"/>
+
+    <!-- Chimney -->
+    <rect x="800" y="200" width="50" height="200" fill="none" stroke="#C9A959" stroke-width="2" opacity="0.4"/>
+    <rect x="790" y="180" width="70" height="20" fill="none" stroke="#C9A959" stroke-width="2" opacity="0.5"/>
+
+    <!-- Verandah/Porch columns -->
+    <line x1="650" y1="700" x2="650" y2="900" stroke="#C9A959" stroke-width="8" opacity="0.5"/>
+    <line x1="800" y1="700" x2="800" y2="900" stroke="#C9A959" stroke-width="8" opacity="0.5"/>
+    <line x1="950" y1="700" x2="950" y2="900" stroke="#C9A959" stroke-width="8" opacity="0.5"/>
+    <line x1="1100" y1="700" x2="1100" y2="900" stroke="#C9A959" stroke-width="8" opacity="0.5"/>
+    <line x1="1250" y1="700" x2="1250" y2="900" stroke="#C9A959" stroke-width="8" opacity="0.5"/>
+    <line x1="1400" y1="700" x2="1400" y2="900" stroke="#C9A959" stroke-width="8" opacity="0.5"/>
+
+    <!-- Verandah roof -->
+    <rect x="580" y="690" width="930" height="10" fill="#C9A959" opacity="0.3" stroke="#C9A959" stroke-width="2"/>
+
+    <!-- Main entrance -->
+    <rect x="950" y="750" width="170" height="150" fill="none" stroke="#C9A959" stroke-width="3" opacity="0.7"/>
+    <circle cx="1035" cy="825" r="5" fill="#C9A959" opacity="0.5"/>
+
+    <!-- Windows (symmetrical) -->
+    <rect x="680" y="480" width="110" height="140" fill="none" stroke="#C9A959" stroke-width="2" opacity="0.5"/>
+    <line x1="735" y1="480" x2="735" y2="620" stroke="#C9A959" stroke-width="1.5" opacity="0.4"/>
+    <line x1="680" y1="550" x2="790" y2="550" stroke="#C9A959" stroke-width="1.5" opacity="0.4"/>
+
+    <rect x="870" y="480" width="110" height="140" fill="none" stroke="#C9A959" stroke-width="2" opacity="0.5"/>
+    <line x1="925" y1="480" x2="925" y2="620" stroke="#C9A959" stroke-width="1.5" opacity="0.4"/>
+    <line x1="870" y1="550" x2="980" y2="550" stroke="#C9A959" stroke-width="1.5" opacity="0.4"/>
+
+    <rect x="1090" y="480" width="110" height="140" fill="none" stroke="#C9A959" stroke-width="2" opacity="0.5"/>
+    <line x1="1145" y1="480" x2="1145" y2="620" stroke="#C9A959" stroke-width="1.5" opacity="0.4"/>
+    <line x1="1090" y1="550" x2="1200" y2="550" stroke="#C9A959" stroke-width="1.5" opacity="0.4"/>
+
+    <rect x="1280" y="480" width="110" height="140" fill="none" stroke="#C9A959" stroke-width="2" opacity="0.5"/>
+    <line x1="1335" y1="480" x2="1335" y2="620" stroke="#C9A959" stroke-width="1.5" opacity="0.4"/>
+    <line x1="1280" y1="550" x2="1390" y2="550" stroke="#C9A959" stroke-width="1.5" opacity="0.4"/>
+
+    <!-- Lush Garden Elements -->
+    <!-- Trees -->
+    <circle cx="350" cy="700" r="120" fill="url(#foliage)"/>
+    <rect x="340" y="700" width="20" height="250" fill="#4A7C59" opacity="0.2"/>
+
+    <circle cx="1720" cy="650" r="140" fill="url(#foliage)"/>
+    <rect x="1710" y="650" width="20" height="300" fill="#4A7C59" opacity="0.2"/>
+
+    <circle cx="250" cy="950" r="90" fill="url(#foliage)"/>
+    <rect x="245" y="950" width="15" height="200" fill="#4A7C59" opacity="0.2"/>
+
+    <circle cx="1820" cy="1000" r="100" fill="url(#foliage)"/>
+    <rect x="1815" y="1000" width="15" height="180" fill="#4A7C59" opacity="0.2"/>
+
+    <!-- Garden hedges -->
+    <ellipse cx="1035" cy="1050" rx="400" ry="50" fill="none" stroke="#4A7C59" stroke-width="3" opacity="0.25"/>
+    <ellipse cx="1035" cy="1150" rx="500" ry="50" fill="none" stroke="#4A7C59" stroke-width="2" opacity="0.2"/>
+
+    <!-- Fountain centerpiece -->
+    <circle cx="1035" cy="1100" r="40" fill="none" stroke="#C9A959" stroke-width="2" opacity="0.3"/>
+    <circle cx="1035" cy="1100" r="25" fill="none" stroke="#C9A959" stroke-width="1.5" opacity="0.2"/>
+    <circle cx="1035" cy="1100" r="10" fill="#C9A959" opacity="0.15"/>
+  </g>
+
+  <!-- Labels -->
+  <text x="1035" y="1310" text-anchor="middle" fill="#C9A959" opacity="0.2" font-family="serif" font-size="28" font-weight="300" letter-spacing="4">GARDEN ESTATE</text>
+  <text x="1035" y="1345" text-anchor="middle" fill="#C9A959" opacity="0.15" font-family="serif" font-size="18" font-weight="300" letter-spacing="8">BANGALORE</text>
+</svg>

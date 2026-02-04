@@ -1,0 +1,11 @@
+// Component exports for easier imports
+export { Navigation } from './Navigation'
+export { Hero } from './Hero'
+export { FeaturedProperties } from './FeaturedProperties'
+export { PropertyGallery } from './PropertyGallery'
+export { MapExplorer } from './MapExplorer'
+export { House3DViewer } from './House3DViewer'
+export { TeamSection } from './TeamSection'
+export { Testimonials } from './Testimonials'
+export { ContactForm } from './ContactForm'
+export { Footer } from './Footer'
