@@ -1,0 +1,9 @@
+# robots.txt for GharSetu
+User-agent: *
+Allow: /
+
+# Disallow admin or sensitive routes
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://gharsetu.com/sitemap.xml

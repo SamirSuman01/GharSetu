@@ -3,94 +3,18 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useState } from 'react'
+import { properties } from '@/lib/properties'
 
-interface Property {
-  id: number
-  title: string
-  location: string
-  priceInCrores: number
-  bedrooms: number
-  bathrooms: number
-  sqft: number
-  image: string
-  type: string
-  city: string
-}
-
-const allProperties: Property[] = [
-  {
-    id: 1,
-    title: 'Lutyens Bungalow',
-    location: 'Golf Links, New Delhi',
-    priceInCrores: 125,
-    bedrooms: 6,
-    bathrooms: 8,
-    sqft: 12000,
-    image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80',
-    type: 'Bungalow',
-    city: 'Delhi',
-  },
-  {
-    id: 2,
-    title: 'Sea-Facing Residence',
-    location: 'Malabar Hill, Mumbai',
-    priceInCrores: 185,
-    bedrooms: 5,
-    bathrooms: 6,
-    sqft: 8500,
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
-    type: 'Apartment',
-    city: 'Mumbai',
-  },
-  {
-    id: 3,
-    title: 'Garden Estate',
-    location: 'Sadashivanagar, Bangalore',
-    priceInCrores: 75,
-    bedrooms: 7,
-    bathrooms: 7,
-    sqft: 15000,
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
-    type: 'Villa',
-    city: 'Bangalore',
-  },
-  {
-    id: 4,
-    title: 'Penthouse Suite',
-    location: 'Worli, Mumbai',
-    priceInCrores: 225,
-    bedrooms: 4,
-    bathrooms: 5,
-    sqft: 9500,
-    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80',
-    type: 'Penthouse',
-    city: 'Mumbai',
-  },
-  {
-    id: 5,
-    title: 'Heritage Mansion',
-    location: 'Ballygunge, Kolkata',
-    priceInCrores: 55,
-    bedrooms: 8,
-    bathrooms: 10,
-    sqft: 18000,
-    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80',
-    type: 'Mansion',
-    city: 'Kolkata',
-  },
-  {
-    id: 6,
-    title: 'Contemporary Villa',
-    location: 'Jubilee Hills, Hyderabad',
-    priceInCrores: 95,
-    bedrooms: 5,
-    bathrooms: 7,
-    sqft: 11000,
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80',
-    type: 'Villa',
-    city: 'Hyderabad',
-  },
-]
+// Get all properties and extract city from location
+const allProperties = properties.map(property => ({
+  ...property,
+  type: property.title.includes('Bungalow') ? 'Bungalow' :
+        property.title.includes('Penthouse') ? 'Penthouse' :
+        property.title.includes('Mansion') ? 'Mansion' :
+        property.title.includes('Estate') ? 'Villa' :
+        property.title.includes('Villa') ? 'Villa' : 'Apartment',
+  city: property.city,
+}))
 
 export default function PropertiesPage() {
   const [selectedCity, setSelectedCity] = useState<string>('All')
