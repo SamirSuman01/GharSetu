@@ -1,9 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { Navigation } from '@/components/Navigation'
+import { Footer } from '@/components/Footer'
 
 export default function ConsultationPage() {
   const router = useRouter()
@@ -56,20 +57,10 @@ export default function ConsultationPage() {
   }
 
   return (
-    <div className="min-h-screen bg-luxury-charcoal py-24">
-      <div className="container-luxury max-w-3xl">
-        {/* Back Button */}
-        <Link href="/">
-          <motion.button
-            whileHover={{ x: -5 }}
-            className="mb-8 flex items-center gap-2 text-luxury-off-white/70 hover:text-luxury-gold transition-colors duration-300"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Back to Home
-          </motion.button>
-        </Link>
+    <>
+      <Navigation />
+      <div className="min-h-screen bg-luxury-charcoal pt-32 pb-24">
+        <div className="container-luxury max-w-3xl">
 
         {!isSubmitted ? (
           <>
@@ -256,7 +247,9 @@ export default function ConsultationPage() {
             </p>
           </motion.div>
         )}
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   )
 }

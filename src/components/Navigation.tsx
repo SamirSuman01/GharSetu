@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
+import Link from 'next/link'
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -49,18 +50,15 @@ export function Navigation() {
         <div className="container-luxury">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <motion.a
-              href="#home"
-              onClick={(e) => {
-                e.preventDefault()
-                handleNavClick('#home')
-              }}
-              className="text-3xl md:text-4xl font-display font-light text-gradient-gold cursor-pointer tracking-wide"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.8 }}
-            >
-              GharSetu
-            </motion.a>
+            <Link href="/">
+              <motion.div
+                className="text-3xl md:text-4xl font-display font-light text-gradient-gold cursor-pointer tracking-wide"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.8 }}
+              >
+                GharSetu
+              </motion.div>
+            </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-10">
