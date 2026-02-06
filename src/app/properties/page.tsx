@@ -1,11 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 import { useState } from 'react'
-import { properties } from '@/lib/properties'
+import { properties, type Property } from '@/lib/properties'
 import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
+import { PropertyDetailsModal } from '@/components/PropertyDetailsModal'
 
 // Get all properties and extract city from location
 const allProperties = properties.map(property => ({
@@ -22,6 +22,8 @@ export default function PropertiesPage() {
   const [selectedCity, setSelectedCity] = useState<string>('All')
   const [selectedType, setSelectedType] = useState<string>('All')
   const [priceRange, setPriceRange] = useState<string>('All')
+  const [selectedProperty, setSelectedProperty] = useState<Property | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const cities = ['All', ...Array.from(new Set(allProperties.map((p) => p.city)))]
   const types = ['All', ...Array.from(new Set(allProperties.map((p) => p.type)))]
@@ -153,6 +155,10 @@ export default function PropertiesPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 + index * 0.1 }}
+              onClick={() => {
+                setSelectedProperty(property)
+                setIsModalOpen(true)
+              }}
               className="group cursor-pointer"
             >
               <div className="relative overflow-hidden rounded-2xl bg-luxury-slate/50 backdrop-blur-sm border border-luxury-off-white/5 hover:border-luxury-gold/20 transition-all duration-500 h-full">
@@ -206,22 +212,20 @@ export default function PropertiesPage() {
                   </div>
 
                   {/* CTA */}
-                  <Link href={`/?property=${property.id}`}>
-                    <motion.button
-                      whileHover={{ x: 3 }}
-                      className="mt-6 flex items-center gap-2 text-luxury-off-white/70 hover:text-luxury-gold font-light text-sm tracking-wide group/btn transition-colors duration-300"
+                  <motion.div
+                    whileHover={{ x: 3 }}
+                    className="mt-6 flex items-center gap-2 text-luxury-off-white/70 hover:text-luxury-gold font-light text-sm tracking-wide group/btn transition-colors duration-300"
+                  >
+                    <span>View Details</span>
+                    <svg
+                      className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                     >
-                      <span>View Details</span>
-                      <svg
-                        className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </motion.button>
-                  </Link>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
@@ -250,6 +254,13 @@ export default function PropertiesPage() {
         )}
         </div>
       </div>
+
+      {/* Property Details Modal */}
+      <PropertyDetailsModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        property={selectedProperty}
+      />
       <Footer />
     </>
   )

@@ -28,8 +28,7 @@ export function Footer() {
               GharSetu
             </h3>
             <p className="text-sm text-luxury-off-white/50 font-light leading-relaxed mb-4">
-              Private advisory for distinguished real estate investments across India.
-              By appointment only.
+              Private advisory for distinguished real estate investments across India's most prestigious addresses.
             </p>
           </div>
 

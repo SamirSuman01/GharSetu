@@ -78,7 +78,7 @@ export default function ConsultationPage() {
                 Arrange <span className="text-gradient-gold">Consultation</span>
               </h1>
               <p className="text-luxury-off-white/60 font-light leading-relaxed max-w-2xl mx-auto">
-                Schedule a private consultation with our advisory team. By appointment only.
+                Schedule a private consultation with our advisory team to discuss your requirements.
               </p>
             </motion.div>
 

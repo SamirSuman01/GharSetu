@@ -18,7 +18,7 @@ const teamMembers: TeamMember[] = [
     role: 'Private Advisor',
     image: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=800&q=80',
     bio: "Advising select families on distinguished addresses across India's most coveted locations.",
-    email: 'arjun@gharsetu.com',
+    email: 'advisory@gharsetu.com',
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const teamMembers: TeamMember[] = [
     role: 'Private Advisor',
     image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80',
     bio: 'Facilitating discreet acquisitions for discerning clientele seeking exceptional properties.',
-    email: 'naina@gharsetu.com',
+    email: 'advisory@gharsetu.com',
   },
 ]
 
