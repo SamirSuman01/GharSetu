@@ -151,12 +151,17 @@ export function House3DViewer() {
           transition={{ delay: 0.5, duration: 1.2 }}
           className="relative"
         >
-          <div className="w-full h-[600px] rounded-3xl overflow-hidden border border-luxury-off-white/5 bg-gradient-to-b from-luxury-slate to-luxury-charcoal">
+          <div className="w-full h-[600px] rounded-3xl overflow-hidden border border-luxury-off-white/5 bg-gradient-to-b from-luxury-slate to-luxury-charcoal relative">
             <Canvas shadows>
               <Suspense fallback={null}>
                 <Scene />
               </Suspense>
             </Canvas>
+
+            {/* Touch instructions for mobile */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 md:hidden glass-dark px-6 py-3 rounded-full text-luxury-off-white/80 text-xs backdrop-blur-xl pointer-events-none">
+              Touch and drag to rotate • Pinch to zoom
+            </div>
           </div>
 
         </motion.div>

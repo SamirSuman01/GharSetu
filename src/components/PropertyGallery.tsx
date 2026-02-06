@@ -140,12 +140,12 @@ export function PropertyGallery() {
                     className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-1000"
                   />
 
-                  {/* Subtle Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-luxury-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-800" />
+                  {/* Subtle Gradient overlay - always visible on mobile, hover on desktop */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-luxury-charcoal/60 via-transparent to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-800" />
 
-                  {/* Image info - minimal */}
-                  <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-800">
-                    <h3 className="text-xl font-display font-light text-luxury-off-white mb-1">
+                  {/* Image info - visible on mobile, hover on desktop */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 translate-y-0 md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-800">
+                    <h3 className="text-lg md:text-xl font-display font-light text-luxury-off-white mb-1">
                       {image.title}
                     </h3>
                     <p className="text-luxury-off-white/60 text-sm font-light">

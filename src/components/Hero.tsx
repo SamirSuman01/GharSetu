@@ -73,12 +73,14 @@ export function Hero() {
       ref={heroRef}
       className="relative h-screen w-full overflow-hidden flex items-center justify-center"
     >
-      {/* Background Image */}
+      {/* Background Image - optimized for performance */}
       <div className="absolute inset-0 z-0">
         <div
           ref={videoRef}
           className="absolute inset-0 w-full h-full bg-cover bg-center scale-100"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=2400&q=80')" }}
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80&auto=format')"
+          }}
         />
 
         {/* Particle Effect */}

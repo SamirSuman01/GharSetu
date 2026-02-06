@@ -353,10 +353,7 @@ export function ContactForm() {
 
                 {/* Privacy note */}
                 <p className="text-xs text-luxury-off-white/40 text-center font-light">
-                  Your information is handled with complete discretion.{' '}
-                  <a href="/privacy" className="text-luxury-gold hover:underline">
-                    Privacy Policy
-                  </a>
+                  Your information is handled with complete discretion.
                 </p>
               </div>
             </form>

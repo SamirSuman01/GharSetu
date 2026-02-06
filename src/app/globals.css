@@ -223,17 +223,17 @@ body {
   transition: all 0.4s var(--ease-luxury);
 }
 
-/* Position arrows outside the swiper container */
+/* Position arrows inside the swiper container for better mobile support */
 .gallery-swiper .swiper-button-prev {
-  left: -80px;
+  left: 20px;
 }
 
 .gallery-swiper .swiper-button-next {
-  right: -80px;
+  right: 20px;
 }
 
-/* Hide arrows on mobile/tablet */
-@media (max-width: 1280px) {
+/* Hide arrows on mobile/tablet to avoid blocking content */
+@media (max-width: 1024px) {
   .gallery-swiper .swiper-button-prev,
   .gallery-swiper .swiper-button-next {
     display: none;
