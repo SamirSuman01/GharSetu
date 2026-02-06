@@ -6,6 +6,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { PropertyDetailsModal } from '@/components/PropertyDetailsModal'
 import { Card3D } from '@/components/Card3D'
+import { ScrambleText } from '@/components/ScrambleText'
 import { properties, type Property } from '@/lib/properties'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -156,7 +157,13 @@ function PropertyCard({ property, onClick }: { property: Property; onClick: () =
               transition={{ delay: 0.3, duration: 1.2 }}
               className="text-2xl font-display font-light text-luxury-off-white tracking-wide"
             >
-              {property.priceInCrores ? `₹ ${property.priceInCrores} Cr` : 'On Request'}
+              {property.priceInCrores ? (
+                <ScrambleText speed={40} scrambleSpeed={25}>
+                  {`₹ ${property.priceInCrores} Cr`}
+                </ScrambleText>
+              ) : (
+                'On Request'
+              )}
             </motion.div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 'use client'
 
 import { Hero } from '@/components/Hero'
+import { CitiesMarquee } from '@/components/CitiesMarquee'
 import { FeaturedProperties } from '@/components/FeaturedProperties'
 import { PropertyGallery } from '@/components/PropertyGallery'
 import { MapExplorer } from '@/components/MapExplorer'
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <ParallaxProvider>
       <Hero />
+      <CitiesMarquee />
       <FeaturedProperties />
       <PropertyGallery />
       <MapExplorer />
