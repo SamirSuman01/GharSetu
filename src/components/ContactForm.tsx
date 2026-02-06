@@ -14,6 +14,8 @@ interface FormErrors {
 export function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
+    email: '',
+    phone: '',
     city: '',
     investmentRange: '',
     message: '',
@@ -70,6 +72,8 @@ export function ContactForm() {
       setIsSubmitted(true)
       setFormData({
         name: '',
+        email: '',
+        phone: '',
         city: '',
         investmentRange: '',
         message: '',
@@ -236,6 +240,47 @@ export function ContactForm() {
                       {errors.name}
                     </p>
                   )}
+                </div>
+
+                {/* Email & Phone */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-xs font-light text-luxury-off-white/60 mb-3 tracking-wider uppercase"
+                    >
+                      Email <span className="text-luxury-gold">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-5 py-4 bg-luxury-charcoal/50 border border-luxury-off-white/10 rounded-xl text-luxury-off-white placeholder-luxury-off-white/30 focus:outline-none focus:border-luxury-gold/30 transition-all duration-800 font-light"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="phone"
+                      className="block text-xs font-light text-luxury-off-white/60 mb-3 tracking-wider uppercase"
+                    >
+                      Phone <span className="text-luxury-gold">*</span>
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      required
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-5 py-4 bg-luxury-charcoal/50 border border-luxury-off-white/10 rounded-xl text-luxury-off-white placeholder-luxury-off-white/30 focus:outline-none focus:border-luxury-gold/30 transition-all duration-800 font-light"
+                      placeholder="+91 XXXXX XXXXX"
+                    />
+                  </div>
                 </div>
 
                 {/* City */}
