@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 interface DropdownOption {
   value: string
@@ -83,6 +84,7 @@ function CustomDropdown({
 }
 
 export default function CataloguePage() {
+  const router = useRouter()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -122,7 +124,7 @@ export default function CataloguePage() {
       setIsSubmitted(true)
 
       setTimeout(() => {
-        window.location.href = '/'
+        router.push('/')
       }, 3000)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')

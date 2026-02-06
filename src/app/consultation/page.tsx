@@ -3,12 +3,16 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function ConsultationPage() {
+  const router = useRouter()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
+    preferredDate: '',
+    preferredTime: '',
     message: '',
   })
 
@@ -42,7 +46,7 @@ export default function ConsultationPage() {
       setIsSubmitted(true)
 
       setTimeout(() => {
-        window.location.href = '/'
+        router.push('/')
       }, 3000)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
@@ -151,17 +155,47 @@ export default function ConsultationPage() {
                 </div>
               </div>
 
-              {/* Message */}
+              {/* Preferred Date & Time */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm text-luxury-off-white/80 font-light mb-2 tracking-wide">
+                    Preferred Date
+                  </label>
+                  <input
+                    type="date"
+                    value={formData.preferredDate}
+                    onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
+                    min={new Date().toISOString().split('T')[0]}
+                    className="w-full px-5 py-3.5 glass rounded-xl text-luxury-off-white font-light focus:outline-none focus:ring-2 focus:ring-luxury-gold/30 transition-all duration-300"
+                    style={{ backgroundColor: '#2D2D2D', colorScheme: 'dark' }}
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm text-luxury-off-white/80 font-light mb-2 tracking-wide">
+                    Preferred Time
+                  </label>
+                  <input
+                    type="time"
+                    value={formData.preferredTime}
+                    onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
+                    className="w-full px-5 py-3.5 glass rounded-xl text-luxury-off-white font-light focus:outline-none focus:ring-2 focus:ring-luxury-gold/30 transition-all duration-300"
+                    style={{ backgroundColor: '#2D2D2D', colorScheme: 'dark' }}
+                  />
+                </div>
+              </div>
+
+              {/* Additional Message */}
               <div>
                 <label className="block text-sm text-luxury-off-white/80 font-light mb-2 tracking-wide">
-                  Preferred Date & Time
+                  Additional Notes (Optional)
                 </label>
                 <textarea
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  rows={5}
+                  rows={4}
                   className="w-full px-5 py-3.5 glass rounded-xl text-luxury-off-white font-light placeholder:text-luxury-off-white/30 focus:outline-none focus:ring-2 focus:ring-luxury-gold/30 transition-all duration-300 resize-none"
-                  placeholder="Preferred date and time for consultation..."
+                  placeholder="Any specific requirements or preferences..."
                   style={{ backgroundColor: '#2D2D2D' }}
                 />
               </div>

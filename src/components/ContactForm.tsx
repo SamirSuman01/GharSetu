@@ -37,6 +37,10 @@ export function ContactForm() {
       newErrors.city = 'City is required'
     }
 
+    if (!formData.investmentRange) {
+      newErrors.investmentRange = 'Please select your investment range'
+    }
+
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
   }
@@ -323,21 +327,31 @@ export function ContactForm() {
                     htmlFor="investmentRange"
                     className="block text-xs font-light text-luxury-off-white/60 mb-3 tracking-wider uppercase"
                   >
-                    Investment Range
+                    Investment Range <span className="text-luxury-gold">*</span>
                   </label>
                   <select
                     id="investmentRange"
                     name="investmentRange"
+                    required
                     value={formData.investmentRange}
                     onChange={handleChange}
-                    className="w-full px-5 py-4 bg-luxury-charcoal/50 border border-luxury-off-white/10 rounded-xl text-luxury-off-white focus:outline-none focus:border-luxury-gold/30 transition-all duration-800 font-light"
+                    aria-invalid={!!errors.investmentRange}
+                    aria-describedby={errors.investmentRange ? 'investment-error' : undefined}
+                    className={`w-full px-5 py-4 bg-luxury-charcoal/50 border rounded-xl text-luxury-off-white focus:outline-none focus:border-luxury-gold/30 transition-all duration-800 font-light ${
+                      errors.investmentRange ? 'border-red-500/50' : 'border-luxury-off-white/10'
+                    }`}
                   >
-                    <option value="">Prefer not to specify</option>
+                    <option value="">Select range</option>
                     <option value="10-25cr">₹ 10-25 Cr</option>
                     <option value="25-50cr">₹ 25-50 Cr</option>
                     <option value="50-100cr">₹ 50-100 Cr</option>
                     <option value="100cr+">₹ 100 Cr+</option>
                   </select>
+                  {errors.investmentRange && (
+                    <p id="investment-error" className="mt-2 text-sm text-red-400">
+                      {errors.investmentRange}
+                    </p>
+                  )}
                 </div>
 
                 {/* Message */}
