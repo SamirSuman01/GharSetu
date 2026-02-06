@@ -5,6 +5,8 @@ import { motion } from 'framer-motion'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ParticleBackground } from '@/components/ParticleBackground'
+import { TextReveal } from '@/components/TextReveal'
+import { MagneticButton } from '@/components/MagneticButton'
 import Link from 'next/link'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -18,25 +20,26 @@ export function Hero() {
     if (!heroRef.current) return
 
     const ctx = gsap.context(() => {
-      // Subtle parallax on video - barely perceptible
-      gsap.to(overlayRef.current, {
-        opacity: 0.85,
+      // Enhanced parallax on background - smooth and buttery
+      gsap.to(videoRef.current, {
+        y: 200,
+        scale: 1.1,
         scrollTrigger: {
           trigger: heroRef.current,
           start: 'top top',
           end: 'bottom top',
-          scrub: true,
+          scrub: 1,
         },
       })
 
-      // Minimal scale effect
-      gsap.to(videoRef.current, {
-        scale: 1.05,
+      // Fade overlay on scroll
+      gsap.to(overlayRef.current, {
+        opacity: 0.95,
         scrollTrigger: {
           trigger: heroRef.current,
           start: 'top top',
           end: 'bottom top',
-          scrub: true,
+          scrub: 1,
         },
       })
     }, heroRef)
@@ -106,14 +109,11 @@ export function Hero() {
           </span>
         </motion.div>
 
-        <motion.h1
-          variants={itemVariants}
-          className="text-display-xl font-display font-light text-luxury-off-white mb-8 leading-[0.95] tracking-tight"
-        >
-          India's Private
-          <br />
-          <span className="text-gradient-gold">Residences</span>
-        </motion.h1>
+        <motion.div variants={itemVariants}>
+          <TextReveal className="text-display-xl font-display font-light text-luxury-off-white mb-8 leading-[0.95] tracking-tight">
+            India's Private Residences
+          </TextReveal>
+        </motion.div>
 
         <motion.p
           variants={itemVariants}
@@ -127,23 +127,21 @@ export function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-5"
         >
           <Link href="/catalogue">
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="px-10 py-4 bg-luxury-gold text-luxury-charcoal font-medium rounded-full hover:bg-luxury-gold-light transition-all duration-800 hover:shadow-lg hover:shadow-luxury-gold/20 min-w-[240px] text-sm tracking-wide"
+            <MagneticButton
+              strength={0.4}
+              className="px-10 py-4 bg-luxury-gold text-luxury-charcoal font-medium rounded-full hover:bg-luxury-gold-light transition-all duration-800 hover:shadow-lg hover:shadow-luxury-gold/20 min-w-[240px] text-sm tracking-wide shine-effect"
             >
               Request Private Catalogue
-            </motion.button>
+            </MagneticButton>
           </Link>
 
           <Link href="/consultation">
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+            <MagneticButton
+              strength={0.4}
               className="px-10 py-4 glass text-luxury-off-white font-medium rounded-full hover:bg-luxury-off-white/5 transition-all duration-800 min-w-[240px] text-sm tracking-wide"
             >
               Arrange Consultation
-            </motion.button>
+            </MagneticButton>
           </Link>
         </motion.div>
       </motion.div>
