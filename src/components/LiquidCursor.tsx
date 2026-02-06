@@ -33,8 +33,8 @@ export function LiquidCursor() {
       const isClickable =
         target.tagName === 'BUTTON' ||
         target.tagName === 'A' ||
-        target.closest('button') ||
-        target.closest('a') ||
+        !!target.closest('button') ||
+        !!target.closest('a') ||
         target.style.cursor === 'pointer' ||
         target.classList.contains('cursor-pointer')
 
