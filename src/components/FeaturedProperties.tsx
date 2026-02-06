@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { PropertyDetailsModal } from '@/components/PropertyDetailsModal'
+import { Card3D } from '@/components/Card3D'
 import { properties, type Property } from '@/lib/properties'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -132,9 +133,10 @@ function PropertyCard({ property, onClick }: { property: Property; onClick: () =
       viewport={{ once: true }}
       transition={{ duration: 1.2 }}
     >
-      <div className="relative overflow-hidden rounded-2xl bg-luxury-slate/50 backdrop-blur-sm border border-luxury-off-white/5 hover:border-luxury-gold/20 transition-all duration-800 h-full">
+      <Card3D maxTilt={8} className="h-full">
+        <div className="relative overflow-hidden rounded-2xl bg-luxury-slate/50 backdrop-blur-sm border border-luxury-off-white/5 hover:border-luxury-gold/20 transition-all duration-800 h-full">
         {/* Image Container */}
-        <div className="relative h-96 overflow-hidden">
+        <div className="relative h-96 overflow-hidden" style={{ transform: 'translateZ(20px)' }}>
           <div className="property-image absolute inset-0">
             <img
               src={property.image}
@@ -197,6 +199,7 @@ function PropertyCard({ property, onClick }: { property: Property; onClick: () =
           </motion.button>
         </div>
       </div>
+      </Card3D>
     </motion.div>
   )
 }

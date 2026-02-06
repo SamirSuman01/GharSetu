@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { Card3D } from '@/components/Card3D'
 
 interface TeamMember {
   id: number
@@ -87,7 +88,8 @@ export function TeamSection() {
               transition={{ delay: index * 0.2, duration: 1.2 }}
               className="group"
             >
-              <div className="relative glass-dark rounded-2xl overflow-hidden border border-luxury-off-white/5 hover:border-luxury-gold/20 transition-all duration-800 h-full">
+              <Card3D maxTilt={6} className="h-full">
+                <div className="relative glass-dark rounded-2xl overflow-hidden border border-luxury-off-white/5 hover:border-luxury-gold/20 transition-all duration-800 h-full">
                 {/* Avatar */}
                 <div className="relative h-96 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-luxury-charcoal z-10" />
@@ -134,6 +136,7 @@ export function TeamSection() {
                   </div>
                 </div>
               </div>
+              </Card3D>
             </motion.div>
           ))}
         </div>
