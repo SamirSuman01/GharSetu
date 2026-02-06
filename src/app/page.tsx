@@ -1,11 +1,8 @@
 'use client'
 
 import { Hero } from '@/components/Hero'
-import { CitiesMarquee } from '@/components/CitiesMarquee'
 import { FeaturedProperties } from '@/components/FeaturedProperties'
 import { PropertyGallery } from '@/components/PropertyGallery'
-import { HorizontalScrollGallery } from '@/components/HorizontalScrollGallery'
-import { BentoGrid } from '@/components/BentoGrid'
 import { MapExplorer } from '@/components/MapExplorer'
 import { House3DViewer } from '@/components/House3DViewer'
 import { TeamSection } from '@/components/TeamSection'
@@ -18,11 +15,8 @@ export default function Home() {
   return (
     <ParallaxProvider>
       <Hero />
-      <CitiesMarquee />
       <FeaturedProperties />
       <PropertyGallery />
-      <HorizontalScrollGallery />
-      <BentoGrid />
       <MapExplorer />
       <House3DViewer />
       <TeamSection />
