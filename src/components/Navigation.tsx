@@ -97,7 +97,7 @@ export function Navigation() {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+              className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 relative z-50"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -125,10 +125,10 @@ export function Navigation() {
             initial={{ opacity: 0, x: '100%' }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
             className="fixed inset-0 z-40 lg:hidden"
           >
-            <div className="absolute inset-0 glass-dark backdrop-blur-2xl">
+            <div className="absolute inset-0 bg-luxury-charcoal/95 md:glass-dark md:backdrop-blur-2xl">
               <div className="flex flex-col items-center justify-center h-full gap-10">
                 {navLinks.map((link, index) => (
                   <motion.a
@@ -142,7 +142,7 @@ export function Navigation() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 20 }}
-                    transition={{ delay: index * 0.1, duration: 0.8 }}
+                    transition={{ delay: index * 0.05, duration: 0.3 }}
                   >
                     {link.name}
                   </motion.a>
@@ -151,7 +151,7 @@ export function Navigation() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ delay: 0.5, duration: 0.8 }}
+                  transition={{ delay: 0.2, duration: 0.3 }}
                   onClick={() => handleNavClick('#contact')}
                   className="mt-8 px-10 py-4 glass-gold text-luxury-gold font-light text-sm tracking-wide rounded-full border border-luxury-gold/20"
                 >

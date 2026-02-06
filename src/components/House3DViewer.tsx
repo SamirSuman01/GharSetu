@@ -6,75 +6,105 @@ import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
 import { motion } from 'framer-motion'
 import * as THREE from 'three'
 
-// Simple 3D House Model Component
+// Modern Luxury Villa 3D Model
 function HouseModel() {
   const groupRef = useRef<THREE.Group>(null)
 
   useFrame((state) => {
     if (groupRef.current) {
       // Subtle floating animation
-      groupRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.1
+      groupRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.3) * 0.05
     }
   })
 
   return (
     <group ref={groupRef} position={[0, 0, 0]}>
-      {/* Main House Body */}
-      <mesh position={[0, 1.5, 0]} castShadow receiveShadow>
-        <boxGeometry args={[4, 3, 4]} />
-        <meshStandardMaterial color="#f5f5f5" roughness={0.3} metalness={0.1} />
+      {/* Main Villa Structure - Modern Box Design */}
+      <mesh position={[0, 2, 0]} castShadow receiveShadow>
+        <boxGeometry args={[6, 4, 5]} />
+        <meshStandardMaterial
+          color="#E8E4D9"
+          roughness={0.4}
+          metalness={0.05}
+          envMapIntensity={0.5}
+        />
       </mesh>
 
-      {/* Roof */}
-      <mesh position={[0, 3.5, 0]} castShadow>
-        <coneGeometry args={[3.2, 1.5, 4]} />
-        <meshStandardMaterial color="#8B4513" roughness={0.8} />
+      {/* Glass Facade - Large Windows */}
+      <mesh position={[0, 2, 2.51]} castShadow>
+        <boxGeometry args={[5, 3, 0.1]} />
+        <meshStandardMaterial
+          color="#2A4858"
+          roughness={0.05}
+          metalness={0.95}
+          transparent
+          opacity={0.4}
+        />
       </mesh>
 
-      {/* Door */}
-      <mesh position={[0, 0.75, 2.01]} castShadow>
-        <boxGeometry args={[0.8, 1.5, 0.1]} />
-        <meshStandardMaterial color="#654321" roughness={0.7} />
+      {/* Balcony */}
+      <mesh position={[0, 3.5, 3]} castShadow receiveShadow>
+        <boxGeometry args={[4, 0.1, 1]} />
+        <meshStandardMaterial color="#D4CFC0" roughness={0.3} metalness={0.1} />
       </mesh>
 
-      {/* Windows */}
-      {/* Front windows */}
-      <mesh position={[-1, 1.5, 2.01]} castShadow>
-        <boxGeometry args={[0.8, 0.8, 0.1]} />
-        <meshStandardMaterial color="#87CEEB" roughness={0.1} metalness={0.9} />
-      </mesh>
-      <mesh position={[1, 1.5, 2.01]} castShadow>
-        <boxGeometry args={[0.8, 0.8, 0.1]} />
-        <meshStandardMaterial color="#87CEEB" roughness={0.1} metalness={0.9} />
+      {/* Balcony Railing */}
+      <mesh position={[0, 4, 3.5]} castShadow>
+        <boxGeometry args={[4, 0.6, 0.05]} />
+        <meshStandardMaterial color="#8B7355" roughness={0.6} metalness={0.3} />
       </mesh>
 
-      {/* Side windows */}
-      <mesh position={[2.01, 1.5, 0]} castShadow>
-        <boxGeometry args={[0.1, 0.8, 0.8]} />
-        <meshStandardMaterial color="#87CEEB" roughness={0.1} metalness={0.9} />
-      </mesh>
-      <mesh position={[-2.01, 1.5, 0]} castShadow>
-        <boxGeometry args={[0.1, 0.8, 0.8]} />
-        <meshStandardMaterial color="#87CEEB" roughness={0.1} metalness={0.9} />
+      {/* Entrance Canopy */}
+      <mesh position={[0, 1.5, 3.5]} castShadow>
+        <boxGeometry args={[2, 0.1, 1.5]} />
+        <meshStandardMaterial color="#3A3A3A" roughness={0.7} metalness={0.2} />
       </mesh>
 
-      {/* Chimney */}
-      <mesh position={[1.2, 4, 1]} castShadow>
-        <boxGeometry args={[0.5, 1.5, 0.5]} />
-        <meshStandardMaterial color="#8B4513" roughness={0.8} />
+      {/* Side Wing - Modern Extension */}
+      <mesh position={[4, 1.5, -1]} castShadow receiveShadow>
+        <boxGeometry args={[2, 3, 3]} />
+        <meshStandardMaterial color="#D8D4C8" roughness={0.4} metalness={0.05} />
       </mesh>
 
-      {/* Base/Foundation */}
+      {/* Side Wing Window */}
+      <mesh position={[5.01, 1.5, -1]} castShadow>
+        <boxGeometry args={[0.1, 2, 2]} />
+        <meshStandardMaterial
+          color="#2A4858"
+          roughness={0.05}
+          metalness={0.95}
+          transparent
+          opacity={0.4}
+        />
+      </mesh>
+
+      {/* Foundation/Base */}
       <mesh position={[0, -0.1, 0]} receiveShadow>
-        <boxGeometry args={[4.5, 0.2, 4.5]} />
-        <meshStandardMaterial color="#696969" roughness={0.9} />
+        <boxGeometry args={[7, 0.3, 6]} />
+        <meshStandardMaterial color="#5A5A5A" roughness={0.8} metalness={0.1} />
       </mesh>
 
-      {/* Garden/Lawn */}
-      <mesh position={[0, -0.25, 0]} receiveShadow rotation={[-Math.PI / 2, 0, 0]}>
-        <planeGeometry args={[10, 10]} />
-        <meshStandardMaterial color="#90EE90" roughness={1} />
+      {/* Pool/Water Feature */}
+      <mesh position={[-2, -0.15, 4]} receiveShadow>
+        <boxGeometry args={[3, 0.2, 2]} />
+        <meshStandardMaterial
+          color="#4A9FB8"
+          roughness={0.1}
+          metalness={0.3}
+          transparent
+          opacity={0.8}
+        />
       </mesh>
+
+      {/* Landscaping - Stone Path */}
+      <mesh position={[0, -0.2, 0]} receiveShadow rotation={[-Math.PI / 2, 0, 0]}>
+        <planeGeometry args={[12, 12]} />
+        <meshStandardMaterial color="#7A8B7A" roughness={0.9} />
+      </mesh>
+
+      {/* Accent Lighting Fixtures */}
+      <pointLight position={[0, 5, 3]} intensity={0.3} color="#FFA500" distance={10} />
+      <pointLight position={[4, 3, -1]} intensity={0.2} color="#FFA500" distance={8} />
     </group>
   )
 }
@@ -82,16 +112,29 @@ function HouseModel() {
 function Scene() {
   return (
     <>
-      {/* Lighting */}
-      <ambientLight intensity={0.4} />
+      {/* Improved Lighting for Realism */}
+      <ambientLight intensity={0.3} color="#ffffff" />
+
+      {/* Main Sun Light */}
       <directionalLight
-        position={[10, 10, 5]}
-        intensity={1}
+        position={[15, 20, 10]}
+        intensity={1.2}
         castShadow
         shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}
+        shadow-camera-far={50}
+        shadow-camera-left={-10}
+        shadow-camera-right={10}
+        shadow-camera-top={10}
+        shadow-camera-bottom={-10}
+        color="#FFF5E1"
       />
-      <spotLight position={[-10, 10, -5]} intensity={0.5} angle={0.3} penumbra={1} />
+
+      {/* Fill Light */}
+      <directionalLight position={[-10, 10, -5]} intensity={0.4} color="#87CEEB" />
+
+      {/* Accent Rim Light */}
+      <spotLight position={[-15, 15, -10]} intensity={0.6} angle={0.4} penumbra={1} color="#FFE4B5" />
 
       {/* House Model */}
       <HouseModel />
@@ -99,13 +142,15 @@ function Scene() {
       {/* Camera and Controls */}
       <PerspectiveCamera makeDefault position={[8, 6, 8]} fov={50} />
       <OrbitControls
-        enablePan={true}
+        enablePan={typeof window !== 'undefined' && window.innerWidth > 768}
         enableZoom={true}
         enableRotate={true}
         minDistance={5}
         maxDistance={20}
         minPolarAngle={Math.PI / 6}
         maxPolarAngle={Math.PI / 2.5}
+        enableDamping={true}
+        dampingFactor={0.05}
       />
     </>
   )
@@ -151,8 +196,8 @@ export function House3DViewer() {
           transition={{ delay: 0.5, duration: 1.2 }}
           className="relative"
         >
-          <div className="w-full h-[600px] rounded-3xl overflow-hidden border border-luxury-off-white/5 bg-gradient-to-b from-luxury-slate to-luxury-charcoal relative">
-            <Canvas shadows>
+          <div className="w-full h-[600px] rounded-3xl overflow-hidden border border-luxury-off-white/5 bg-gradient-to-b from-luxury-slate to-luxury-charcoal relative md:touch-auto touch-pan-y">
+            <Canvas shadows className="md:pointer-events-auto pointer-events-none">
               <Suspense fallback={null}>
                 <Scene />
               </Suspense>
